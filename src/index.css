@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* ANTI-HITAM PRINT CSS - STRICT WHITE BACKGROUND AND CRISP BORDERS */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 10mm !important;
+  }
+
+  /* Force entire background white, text pure black, scale default 85 */
+  html, body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 7.5pt !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    zoom: 0.85 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide everything except #printArea */
+  .no-print,
+  nav,
+  header,
+  aside,
+  footer,
+  button,
+  .splash-screen,
+  .modal-overlay,
+  .action-bar {
+    display: none !important;
+  }
+
+  #printArea {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Anti-black force on all elements, tables, cells, headers */
+  #printArea,
+  #printArea * {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Header Laporan Sesuai Permintaan User */
+  #printArea .header-laporan {
+    display: block !important;
+    font-size: 14pt !important;
+    margin-bottom: 15px !important;
+    text-align: center !important;
+  }
+
+  table {
+    font-size: 9pt !important;
+  }
+
+  .pengesahan {
+    display: flex !important;
+    justify-content: space-between !important;
+    page-break-inside: avoid !important;
+  }
+
+  #printArea table,
+  #printArea thead,
+  #printArea tbody,
+  #printArea tfoot,
+  #printArea tr,
+  #printArea th,
+  #printArea td {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  #printArea th {
+    font-weight: 700 !important;
+    background-color: #f3f4f6 !important; /* light tint for headers that prints crisp */
+    background: #f3f4f6 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Auto page-break handling for V3 split tables */
+  .page-break-after {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .avoid-break-inside {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}

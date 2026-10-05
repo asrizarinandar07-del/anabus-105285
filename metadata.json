@@ -1,0 +1,6 @@
+{
+  "name": "ANABUS 105285 - Analisis Butir Soal SD Inpres 105285",
+  "description": "Aplikasi Web Analisis Butir Soal UPT SPF SD Inpres 105285 Tandam Hilir I dengan Bobot Penskoran Kemendikdasmen 2025 dan Format Cetak V3 A4 Landscape.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
